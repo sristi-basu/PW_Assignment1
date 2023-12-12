@@ -154,4 +154,5 @@ on r.inventory_id=i.inventory_id
 join store s
 on i.store_id=s.store_id
 where s.store_id in(1,2)
-group by c.customer_id,c.first_name,c.last_name;
+group by c.customer_id,c.first_name,c.last_name
+having count(distinct s.store_id)=2;
